@@ -1,4 +1,4 @@
-module github.com/dimke931/otus_homework
+module github.com/dimke931/otus_homework/hw01_hello_now
 
 go 1.12
 
