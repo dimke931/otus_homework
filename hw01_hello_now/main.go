@@ -14,6 +14,6 @@ func main() {
 		log.Fatal("Can not get exact time")
 	}
 	currentTime := time.Now()
-	fmt.Println("current time: " + currentTime.Format("15:04:05.00000"))
-	fmt.Println("exact time: " + exactTime.Format("15:04:05.00000"))
+	fmt.Println("current time: " + currentTime.Format("2006-01-02 15:04:05 -0700 MST"))
+	fmt.Println("exact time: " + exactTime.Format("2006-01-02 15:04:05 -0700 MST"))
 }
