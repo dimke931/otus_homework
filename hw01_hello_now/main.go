@@ -5,15 +5,15 @@ import (
 	"time"
 
 	"github.com/beevik/ntp"
-	"github.com/spf13/cast"
+	"github.com/prometheus/common/log"
 )
 
 func main() {
 	exactTime, err := ntp.Time("0.beevik-ntp.pool.ntp.org")
 	if err != nil {
-		panic("Can not get exact time")
+		log.Fatal("Can not get exact time")
 	}
 	currentTime := time.Now()
-	fmt.Println("current time: " + cast.ToString(currentTime))
-	fmt.Println("exact time: " + cast.ToString(exactTime))
+	fmt.Println("current time: " + currentTime.Format("15:04:05.00000"))
+	fmt.Println("exact time: " + exactTime.Format("15:04:05.00000"))
 }
