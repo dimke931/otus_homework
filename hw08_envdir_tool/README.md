@@ -22,7 +22,7 @@ $ go-envdir /path/to/env/dir command arg1 arg2
 ```bash
 $ FOO=123 BAR=value command arg1 arg2
 ```
---- 
+---
 
 Также необходимо, чтобы:
 * стандартные потоки ввода/вывода/ошибок пробрасывались в вызываемую программу;
@@ -50,6 +50,5 @@ $ FOO=123 BAR=value command arg1 arg2
 - https://www.unix.com/man-page/debian/8/envdir/
 - `os.Args`
 - `ioutil.ReadDir`
-- `bufio.NewReader`
 - `bytes.Replace`, `strings.TrimRight`
 - `exec.Command`
