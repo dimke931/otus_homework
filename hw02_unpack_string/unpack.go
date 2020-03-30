@@ -9,10 +9,6 @@ import (
 
 var ErrInvalidString = errors.New("invalid string")
 
-func IsEscaped(){
-
-}
-
 func Unpack(str string) (string, error) {
 	var result strings.Builder
 	var runes = []rune(str)
