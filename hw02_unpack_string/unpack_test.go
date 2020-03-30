@@ -53,6 +53,10 @@ func TestMyTests(t *testing.T) {
 			input:    "asd s4ad sad",
 			expected: "asd ssssad sad",
 		},
+		{
+			input: "💊9",
+			expected: "💊💊💊💊💊💊💊💊💊",
+		},
 	} {
 		result, err := Unpack(tst.input)
 		require.Equal(t, tst.err, err)
