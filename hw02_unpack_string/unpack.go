@@ -21,7 +21,7 @@ func Unpack(str string) (string, error) {
 		} else {
 			digit, _ := strconv.Atoi(string(v))
 			if digit != 0 {
-				result.WriteString(strings.Repeat(string(runes[i-1]), digit-1))
+				result.WriteString(strings.Repeat(string(runes[i-1]), digit-1)) //nolint:gomnd
 			} else {
 				return "", ErrInvalidString
 			}
