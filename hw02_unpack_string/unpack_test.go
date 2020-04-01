@@ -48,6 +48,26 @@ func TestUnpack(t *testing.T) {
 	}
 }
 
+func TestMyTests(t *testing.T) {
+	for _, tst := range [...]test{
+		{
+			input:    "Приве2т",
+			expected: "Привеет",
+		},
+		{
+			input:    "asd s4ad sad",
+			expected: "asd ssssad sad",
+		},
+		{
+			input: "💊9",
+			expected: "💊💊💊💊💊💊💊💊💊",
+		},
+	} {
+		result, err := Unpack(tst.input)
+		require.Equal(t, tst.err, err)
+		require.Equal(t, tst.expected, result)
+	}
+}
 func TestUnpackWithEscape(t *testing.T) {
 	t.Skip() // Remove if task with asterisk completed
 
