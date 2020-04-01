@@ -22,7 +22,10 @@ func Unpack(str string) (string, error) {
 		if !unicode.IsDigit(v) {
 			result.WriteRune(v)
 		} else {
-			digit, _ := strconv.Atoi(string(v))
+			digit, err := strconv.Atoi(string(v))
+			if err != nil {
+				return "", ErrInvalidString
+			}
 			if digit != 0 {
 				result.WriteString(strings.Repeat(string(runes[i-1]), digit-1)) //nolint:gomnd
 			} else {
