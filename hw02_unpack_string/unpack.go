@@ -12,10 +12,13 @@ var ErrInvalidString = errors.New("invalid string")
 func Unpack(str string) (string, error) {
 	var result strings.Builder
 	var runes = []rune(str)
+	if str == "" {
+		return "", nil
+	}
+	if unicode.IsDigit(runes[0]) {
+		return "", ErrInvalidString
+	}
 	for i, v := range runes {
-		if unicode.IsDigit(runes[0]) {
-			return "", ErrInvalidString
-		}
 		if !unicode.IsDigit(v) {
 			result.WriteRune(v)
 		} else {
